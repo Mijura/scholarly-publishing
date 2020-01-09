@@ -104,5 +104,12 @@
       }
     }
   },
-  "defaultProject": "client-app"
+  "defaultProject": "client-app",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
 }
