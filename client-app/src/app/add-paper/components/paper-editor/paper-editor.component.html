@@ -1,0 +1,84 @@
+<form class="sp-form" [formGroup]="editPaperForm">
+    <div class="row">
+        <div class="column">
+            <mat-card>
+                <mat-card-title class="card-title">Title</mat-card-title>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="title">
+                </mat-form-field>
+            </mat-card>
+        
+            <mat-card>
+                <mat-card-title class="card-title">
+                    Authors 
+                    <span class="span-button">
+                        <button (click)="addAuthor()" mat-stroked-button class="add-button" matTooltip="Add author" matTooltipPosition="below">author</button>
+                    </span>
+                </mat-card-title>
+                
+                <mat-card *ngFor="let author of authors; let i = index"  formArrayName="authors">
+                    <mat-card-title> Author {{i + 1}} 
+                        <mat-icon class="remove-icon" matTooltip="remove author" matTooltipPosition="below" (click)="removeAuthor(i)">close</mat-icon>
+                        <mat-form-field class="full-width first">
+                            <input matInput placeholder="First Name">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Last Name">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Institution">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Email">
+                        </mat-form-field>
+                    </mat-card-title>
+                </mat-card>
+            </mat-card>
+
+            <mat-card>
+                <mat-card-title class="card-title">
+                    Abstract
+                    <span class="span-button">
+                        <button (click)="addParagraphToAbstract()" mat-stroked-button class="add-button" matTooltip="Add paragraph" matTooltipPosition="below">paragraph</button>
+                    </span>
+                </mat-card-title>
+                <mat-card *ngFor="let paragraph of abstract; let i = index"  formArrayName="abstract">
+                    <mat-card-title>
+                        <mat-icon class="remove-icon" matTooltip="remove paragraph" matTooltipPosition="below" (click)="removeParagraphFromAbstract(i)">close</mat-icon>
+                        <mat-form-field class="full-width first">
+                            <textarea autosize matInput>{{paragraph}}</textarea>
+                        </mat-form-field>
+                    </mat-card-title>
+                </mat-card>
+            </mat-card>
+
+            <mat-card>
+                <mat-card-title class="card-title">Keywords
+                    <span class="span-button">
+                        <button (click)="openKeywordDialog()" mat-stroked-button class="add-button" matTooltip="Add keyword" matTooltipPosition="below">keyword</button>
+                    </span>
+                </mat-card-title>
+            </mat-card>
+        </div>
+        <div class="main-column">
+            <mat-card>
+                <mat-card-title class="card-title">Content</mat-card-title>
+                
+            </mat-card>
+        </div>
+        <div class="column">
+            <mat-card>
+                <mat-card-title class="card-title">References</mat-card-title>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="title">
+                </mat-form-field>
+            </mat-card>
+            <mat-card>
+                <mat-card-title class="card-title">Acknowledgments</mat-card-title>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="title">
+                </mat-form-field>
+            </mat-card>
+        </div>
+    </div>
+</form>

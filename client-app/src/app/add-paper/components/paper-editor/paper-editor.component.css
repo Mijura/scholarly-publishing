@@ -1,0 +1,63 @@
+.sp-form{
+    width: 100vw;
+}
+  
+.full-width {
+    width: 100%;
+}
+
+mat-card{
+    margin: 10px;
+}
+
+mat-card-title{
+    font-size: 13px;
+}
+
+.first{
+    margin-top: 13px;
+}
+
+.span-button{
+    cursor: pointer;
+}
+
+.add-button{
+    line-height: inherit;
+    float: right;
+}
+
+.card-title{
+    font-size: 18px;
+}
+
+.header-centered{
+    margin: auto;
+    width: fit-content;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.remove-icon{
+    float: right;
+    cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: 25vw;
+}
+
+.main-column{
+    float: left;
+    width: 50vw;
+    height: 100vh;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    padding-right: 1vw;
+    padding-left: 1vw;
+}

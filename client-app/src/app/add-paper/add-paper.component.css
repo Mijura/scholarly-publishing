@@ -1,9 +1,13 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-.example-full-width {
-    width: 100%;
+mat-step{
+    background: #fafafa;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container{
+    width: 40vw!important;
+    margin: auto;
+}
+
+::ng-deep .mat-horizontal-content-container{
+    background-color: #f3f3f6;
+    padding: 0px!important;
 }
