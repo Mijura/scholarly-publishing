@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddPaperComponent } from './add-paper.component';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AutosizeModule } from 'ngx-autosize';
-import { PaperEditorComponent } from './components/paper-editor/paper-editor.component';
+import { PaperEditorComponent } from '../shared/components/paper-editor/paper-editor.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +12,7 @@ import { PaperEditorComponent } from './components/paper-editor/paper-editor.com
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule,
-    AutosizeModule
+    ReactiveFormsModule
   ]
 })
 export class AddPaperModule { }
