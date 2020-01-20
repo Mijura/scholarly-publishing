@@ -7,13 +7,14 @@ import {AutosizeModule} from 'ngx-autosize';
 import { KeywordDialogComponent } from './keyword-dialog/keyword-dialog.component';
 import { KeywordComponent } from './keyword/keyword.component';
 import { TitleComponent } from './title/title.component';
+import { AuthorsComponent } from './authors/authors.component';
 
 @NgModule({
   declarations: [
     TitleComponent,
     KeywordComponent,
     KeywordDialogComponent, 
-    PaperEditorComponent
+    PaperEditorComponent, AuthorsComponent
   ],
   exports: [
     PaperEditorComponent

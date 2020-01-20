@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-title',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleComponent {
 
+  @Input()
+  editPaperForm: FormGroup;
+  
   constructor() { }
 
 }

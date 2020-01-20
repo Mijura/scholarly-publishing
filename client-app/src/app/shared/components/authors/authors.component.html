@@ -1,0 +1,28 @@
+<mat-card [formGroup]="editPaperForm">
+    <mat-card-title class="card-title">
+        Authors
+        <span class="span-button">
+            <button (click)="addAuthor()" mat-stroked-button class="add-button" matTooltip="Add author"
+                matTooltipPosition="below">author</button>
+        </span>
+    </mat-card-title>
+
+    <mat-card *ngFor="let author of authors; let i = index" formArrayName="authors">
+        <mat-card-title> Author {{i + 1}}
+            <mat-icon class="remove-icon" matTooltip="remove author" matTooltipPosition="below"
+                (click)="removeAuthor(i)">close</mat-icon>
+            <mat-form-field class="full-width first">
+                <input matInput placeholder="First Name">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Last Name">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Institution">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Email">
+            </mat-form-field>
+        </mat-card-title>
+    </mat-card>
+</mat-card>
