@@ -4,14 +4,16 @@ import { AddPaperComponent } from './add-paper.component';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaperEditorComponent } from '../shared/components/paper-editor/paper-editor.component';
+import { ComponentsModule } from '../shared/components/components.module';
 
 @NgModule({
   declarations: [
-    AddPaperComponent, 
-    PaperEditorComponent],
+    AddPaperComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
+    ComponentsModule,
     ReactiveFormsModule
   ]
 })

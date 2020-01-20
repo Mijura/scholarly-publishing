@@ -31,13 +31,6 @@ mat-card-title{
     font-size: 18px;
 }
 
-.header-centered{
-    margin: auto;
-    width: fit-content;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-}
-
 .remove-icon{
     float: right;
     cursor: pointer;
@@ -60,4 +53,8 @@ mat-card-title{
     clear: both;
     padding-right: 1vw;
     padding-left: 1vw;
+}
+
+.content-card{
+    height: 72.1vh;
 }

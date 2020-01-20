@@ -11,3 +11,10 @@ mat-step{
     background-color: #f3f3f6;
     padding: 0px!important;
 }
+
+.header-centered{
+    margin: auto;
+    width: fit-content;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}

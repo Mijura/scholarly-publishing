@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AddPaperModule } from './add-paper/add-paper.module';
 
-
 @NgModule({
   declarations: [
     AppComponent

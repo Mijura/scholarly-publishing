@@ -4,9 +4,20 @@ import { PaperEditorComponent } from './paper-editor/paper-editor.component';
 import { MaterialModule } from 'src/app/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import {AutosizeModule} from 'ngx-autosize';
+import { KeywordDialogComponent } from './keyword-dialog/keyword-dialog.component';
+import { KeywordComponent } from './keyword/keyword.component';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
-  declarations: [PaperEditorComponent],
+  declarations: [
+    TitleComponent,
+    KeywordComponent,
+    KeywordDialogComponent, 
+    PaperEditorComponent
+  ],
+  exports: [
+    PaperEditorComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
