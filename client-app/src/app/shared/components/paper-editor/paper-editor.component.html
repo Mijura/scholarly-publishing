@@ -3,25 +3,7 @@
         <div class="column">
             <app-title [editPaperForm]="editPaperForm"></app-title>
             <app-authors #authors [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-authors>
-            <mat-card>
-                <mat-card-title class="card-title">
-                    Abstract
-                    <span class="span-button">
-                        <button (click)="addParagraphToAbstract()" mat-stroked-button class="add-button"
-                            matTooltip="Add paragraph" matTooltipPosition="below">paragraph</button>
-                    </span>
-                </mat-card-title>
-                <mat-card *ngFor="let paragraph of abstract; let i = index" formArrayName="abstract">
-                    <mat-card-title>
-                        <mat-icon class="remove-icon" matTooltip="remove paragraph" matTooltipPosition="below"
-                            (click)="removeParagraphFromAbstract(i)">close</mat-icon>
-                        <mat-form-field class="full-width first">
-                            <textarea autosize matInput>{{paragraph}}</textarea>
-                        </mat-form-field>
-                    </mat-card-title>
-                </mat-card>
-            </mat-card>
-
+            <app-abstract #abstract [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-abstract>
             <app-keyword></app-keyword>
         </div>
         <div class="main-column">

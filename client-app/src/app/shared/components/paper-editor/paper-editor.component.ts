@@ -1,34 +1,26 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { PaperEditorViewModel } from './paper-editor.viewmodel';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthorsComponent } from '../authors/authors.component';
+import { AbstractComponent } from '../abstract/abstract.component';
 
 @Component({
   selector: 'app-paper-editor',
   templateUrl: './paper-editor.component.html',
   styleUrls: ['./paper-editor.component.css']
 })
-export class PaperEditorComponent implements OnInit, AfterViewInit{
-
-  public vm: PaperEditorViewModel;
+export class PaperEditorComponent implements AfterViewInit{
   
   @Input() editPaperForm: FormGroup;
   @Input() formBuilder: FormBuilder;
 
   @ViewChild('authors', {static: false})
   authors: AuthorsComponent;
-
-  ngOnInit(): void {
-    this.vm = new PaperEditorViewModel(this.formBuilder, this.editPaperForm);
-    this.addParagraphToAbstract();
-  }
+  @ViewChild('abstract', {static: false})
+  abstract: AbstractComponent;
 
   ngAfterViewInit(): void {
     this.addAuthor();
-  }
-
-  get abstract(){
-    return this.vm.abstractParagraphsArray;
+    this.addParagraphToAbstract();
   }
 
   addAuthor() {
@@ -48,11 +40,11 @@ export class PaperEditorComponent implements OnInit, AfterViewInit{
   }
 
   addParagraphToAbstract(){
-    this.vm.addParagraphToAbstract('');
+    this.abstract.addParagraphToAbstract();
   }
 
   removeParagraphFromAbstract(i){
-    this.vm.removeParagraphFromAbstract(i);
+    this.abstract.removeParagraphFromAbstract(i);
   }
 
 }

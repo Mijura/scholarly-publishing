@@ -8,13 +8,16 @@ import { KeywordDialogComponent } from './keyword-dialog/keyword-dialog.componen
 import { KeywordComponent } from './keyword/keyword.component';
 import { TitleComponent } from './title/title.component';
 import { AuthorsComponent } from './authors/authors.component';
+import { AbstractComponent } from './abstract/abstract.component';
 
 @NgModule({
   declarations: [
     TitleComponent,
     KeywordComponent,
     KeywordDialogComponent, 
-    PaperEditorComponent, AuthorsComponent
+    AuthorsComponent,
+    AbstractComponent,
+    PaperEditorComponent
   ],
   exports: [
     PaperEditorComponent

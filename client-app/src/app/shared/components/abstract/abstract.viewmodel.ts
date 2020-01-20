@@ -1,10 +1,10 @@
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
-export class PaperEditorViewModel{
+export class AbstractViewModel{
 
     public abstractParagraphsArray: Array<string>;
 
-    constructor(private formBuilder: FormBuilder, private editPaperForm: FormGroup) {
+    constructor(public editPaperForm: FormGroup, public formBuilder: FormBuilder) { 
         this.abstractParagraphsArray = new Array<string>();
     }
 
@@ -21,5 +21,4 @@ export class PaperEditorViewModel{
         this.abstractParagraphsArray.splice(i, 1);
         this.abstract.removeAt(i);
     }
-
 }
