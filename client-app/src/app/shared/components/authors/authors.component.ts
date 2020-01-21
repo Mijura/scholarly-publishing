@@ -18,13 +18,22 @@ export class AuthorsComponent implements OnInit{
 
   ngOnInit(): void {
     this.vm = new AuthorsViewModel(this.editPaperForm, this.formBuilder);
+    this.addAuthor();
   }
 
   get authors(){
     return this.vm.authorsArray;
   }
 
-  addAuthor(author){
+  addAuthor() {
+
+    let author: Author = {
+      firstName: '',
+      lastName: '',
+      institution: '',
+      email: ''
+    }
+
     this.vm.addAuthor(author);
   }
 

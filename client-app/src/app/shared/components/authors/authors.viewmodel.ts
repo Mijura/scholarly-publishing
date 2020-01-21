@@ -14,7 +14,7 @@ export class AuthorsViewModel{
 
     addAuthor(author) {
         this.authorsArray.push(author);
-        this.authors.push(this.formBuilder.control(false));
+        this.authors.push(this.formBuilder.group(author));
     }
 
     removeAuthor(i) {

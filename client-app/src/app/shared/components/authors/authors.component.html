@@ -8,20 +8,20 @@
     </mat-card-title>
 
     <mat-card *ngFor="let author of authors; let i = index" formArrayName="authors">
-        <mat-card-title> Author {{i + 1}}
+        <mat-card-title [formGroupName]="i"> Author {{i + 1}}
             <mat-icon class="remove-icon" matTooltip="remove author" matTooltipPosition="below"
                 (click)="removeAuthor(i)">close</mat-icon>
             <mat-form-field class="full-width first">
-                <input matInput placeholder="First Name">
+                <input matInput placeholder="First Name" formControlName="firstName">
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input matInput placeholder="Last Name">
+                <input matInput placeholder="Last Name" formControlName="lastName">
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input matInput placeholder="Institution">
+                <input matInput placeholder="Institution" formControlName="institution">
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input matInput placeholder="Email">
+                <input matInput placeholder="Email" formControlName="email">
             </mat-form-field>
         </mat-card-title>
     </mat-card>

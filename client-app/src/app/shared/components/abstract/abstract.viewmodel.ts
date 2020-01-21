@@ -14,7 +14,7 @@ export class AbstractViewModel{
 
     addParagraphToAbstract(paragraph) {
         this.abstractParagraphsArray.push(paragraph);
-        this.abstract.push(this.formBuilder.control(false));
+        this.abstract.push(this.formBuilder.control(paragraph));
     }
 
     removeParagraphFromAbstract(i) {

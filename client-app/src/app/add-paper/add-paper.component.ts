@@ -20,7 +20,7 @@ export class AddPaperComponent {
   }
 
   addPaper() {
-    alert(this.vm.editPaperForm.value.authors.length)
+    alert(JSON.stringify(this.vm.editPaperForm.value))
   }
 
 }

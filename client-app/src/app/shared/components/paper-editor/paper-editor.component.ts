@@ -13,30 +13,11 @@ export class PaperEditorComponent implements AfterViewInit{
   @Input() editPaperForm: FormGroup;
   @Input() formBuilder: FormBuilder;
 
-  @ViewChild('authors', {static: false})
-  authors: AuthorsComponent;
   @ViewChild('abstract', {static: false})
   abstract: AbstractComponent;
 
   ngAfterViewInit(): void {
-    this.addAuthor();
     this.addParagraphToAbstract();
-  }
-
-  addAuthor() {
-
-    let author: Author = {
-      firstName: '',
-      lastName: '',
-      institution: '',
-      email: ''
-    }
-
-    this.authors.addAuthor(author);
-  }
-
-  removeAuthor(i){
-    this.authors.removeAuthor(i);
   }
 
   addParagraphToAbstract(){
