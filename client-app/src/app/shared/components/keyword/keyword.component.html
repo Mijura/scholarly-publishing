@@ -5,4 +5,8 @@
                 matTooltip="Add keyword" matTooltipPosition="below">keyword</button>
         </span>
     </mat-card-title>
+    <div *ngFor="let keyword of keywords" class="keyword-card">
+        <mat-label class="keyword-inner-element">{{keyword.text}} </mat-label>
+        <i class="material-icons keyword-inner-element keyword-close-icon" (click)="removeKeyword(i)">close</i>
+    </div>
 </mat-card>

@@ -8,7 +8,8 @@ export class AddPaperViewModel{
         this.editPaperForm = this.formBuilder.group({
             title: new FormControl(""),
             authors: this.formBuilder.array([]),
-            abstract: this.formBuilder.array([])
+            abstract: this.formBuilder.array([]),
+            keywords: this.formBuilder.array([])
         })
     }
 }

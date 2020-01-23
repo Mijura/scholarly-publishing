@@ -1,0 +1,3 @@
+interface Keyword{
+    text: String;
+}

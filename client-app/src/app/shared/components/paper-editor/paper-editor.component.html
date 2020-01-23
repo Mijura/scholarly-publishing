@@ -2,9 +2,9 @@
     <div class="row">
         <div class="column">
             <app-title [editPaperForm]="editPaperForm"></app-title>
-            <app-authors #authors [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-authors>
-            <app-abstract #abstract [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-abstract>
-            <app-keyword></app-keyword>
+            <app-authors [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-authors>
+            <app-abstract [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-abstract>
+            <app-keyword [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-keyword>
         </div>
         <div class="main-column">
             <mat-card class="content-card">

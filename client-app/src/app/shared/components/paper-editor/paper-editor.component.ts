@@ -8,24 +8,9 @@ import { AbstractComponent } from '../abstract/abstract.component';
   templateUrl: './paper-editor.component.html',
   styleUrls: ['./paper-editor.component.css']
 })
-export class PaperEditorComponent implements AfterViewInit{
+export class PaperEditorComponent{
   
   @Input() editPaperForm: FormGroup;
   @Input() formBuilder: FormBuilder;
-
-  @ViewChild('abstract', {static: false})
-  abstract: AbstractComponent;
-
-  ngAfterViewInit(): void {
-    this.addParagraphToAbstract();
-  }
-
-  addParagraphToAbstract(){
-    this.abstract.addParagraphToAbstract();
-  }
-
-  removeParagraphFromAbstract(i){
-    this.abstract.removeParagraphFromAbstract(i);
-  }
 
 }
