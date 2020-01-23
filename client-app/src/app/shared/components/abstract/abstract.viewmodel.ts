@@ -2,10 +2,10 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 export class AbstractViewModel{
 
-    public abstractParagraphsArray: Array<string>;
+    public abstractParagraphsArray: Array<Paragraph>;
 
     constructor(public editPaperForm: FormGroup, public formBuilder: FormBuilder) { 
-        this.abstractParagraphsArray = new Array<string>();
+        this.abstractParagraphsArray = new Array<Paragraph>();
     }
 
     get abstract() {
@@ -14,7 +14,7 @@ export class AbstractViewModel{
 
     addParagraphToAbstract(paragraph) {
         this.abstractParagraphsArray.push(paragraph);
-        this.abstract.push(this.formBuilder.control(paragraph));
+        this.abstract.push(this.formBuilder.group(paragraph));
     }
 
     removeParagraphFromAbstract(i) {

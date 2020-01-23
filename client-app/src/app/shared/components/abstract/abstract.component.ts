@@ -18,6 +18,7 @@ export class AbstractComponent implements OnInit {
 
   ngOnInit() {
     this.vm = new AbstractViewModel(this.editPaperForm, this.formBuilder);
+    this.addParagraphToAbstract();
   }
 
   get abstract(){
@@ -25,7 +26,11 @@ export class AbstractComponent implements OnInit {
   }
 
   addParagraphToAbstract(){
-    this.vm.addParagraphToAbstract('');
+    let paragraph :Paragraph = {
+      text: ''
+    }
+
+    this.vm.addParagraphToAbstract(paragraph);
   }
 
   removeParagraphFromAbstract(i){

@@ -7,11 +7,10 @@
         </span>
     </mat-card-title>
     <mat-card *ngFor="let paragraph of abstract; let i = index" formArrayName="abstract">
-        <mat-card-title>
-            <mat-icon class="remove-icon" matTooltip="remove paragraph" matTooltipPosition="below"
-                (click)="removeParagraphFromAbstract(i)">close</mat-icon>
+        <mat-card-title [formGroupName]="i">
+            <mat-icon class="remove-icon" matTooltip="remove paragraph" matTooltipPosition="below" (click)="removeParagraphFromAbstract(i)">close</mat-icon>
             <mat-form-field class="full-width first">
-                <textarea autosize matInput>{{paragraph}}</textarea>
+                <textarea autosize matInput formControlName="text">{{paragraph.text}}</textarea>
             </mat-form-field>
         </mat-card-title>
     </mat-card>
