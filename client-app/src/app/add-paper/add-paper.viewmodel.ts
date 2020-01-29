@@ -9,7 +9,8 @@ export class AddPaperViewModel{
             title: new FormControl(""),
             authors: this.formBuilder.array([]),
             abstract: this.formBuilder.array([]),
-            keywords: this.formBuilder.array([])
+            keywords: this.formBuilder.array([]),
+            content: this.formBuilder.array([])
         })
     }
 }

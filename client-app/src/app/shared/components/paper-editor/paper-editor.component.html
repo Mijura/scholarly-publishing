@@ -7,14 +7,7 @@
             <app-keyword [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-keyword>
         </div>
         <div class="main-column">
-            <mat-card class="content-card">
-                <mat-card-title class="card-title">Content
-                    <span class="span-button">
-                        <button (click)="addSection()" mat-stroked-button class="add-button" matTooltip="Add section"
-                            matTooltipPosition="below">section</button>
-                    </span>
-                </mat-card-title>
-            </mat-card>
+            <app-content [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-content>
         </div>
         <div class="column">
             <mat-card>

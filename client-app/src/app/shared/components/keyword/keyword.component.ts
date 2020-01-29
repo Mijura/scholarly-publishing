@@ -13,7 +13,6 @@ export class KeywordComponent implements OnInit{
 
   @Input() 
   editPaperForm: FormGroup;
-
   @Input()
   formBuilder: FormBuilder;
 

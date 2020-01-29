@@ -10,7 +10,9 @@ import { AbstractComponent } from '../abstract/abstract.component';
 })
 export class PaperEditorComponent{
   
-  @Input() editPaperForm: FormGroup;
-  @Input() formBuilder: FormBuilder;
+  @Input() 
+  editPaperForm: FormGroup;
+  @Input() 
+  formBuilder: FormBuilder;
 
 }

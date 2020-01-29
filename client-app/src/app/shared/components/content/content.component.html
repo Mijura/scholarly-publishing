@@ -1,0 +1,30 @@
+<mat-card class="content-card" [formGroup]="editPaperForm">
+    <mat-card-title class="card-title">Content
+        <span class="span-button">
+            <button (click)="addSection()" mat-stroked-button class="add-button" matTooltip="Add section"
+                matTooltipPosition="below">section</button>
+        </span>
+    </mat-card-title>
+    <mat-card *ngFor="let section of sections; let i = index" formArrayName="content">
+        <div [formGroupName]="i">
+            <mat-icon class="remove-icon" matTooltip="remove section" matTooltipPosition="below"
+                (click)="removeSection(i)">close</mat-icon>
+            <br><br>
+            <span class="span-button" style="margin-top:50px">
+                <button (click)="addParagraph(i)" mat-stroked-button class="add-button" matTooltip="Add paragraph"
+                    matTooltipPosition="below">paragraph</button>
+            </span>
+            <mat-form-field class="full-width">
+                <input matInput formControlName="title" placeholder="Section Title">
+            </mat-form-field>
+            <mat-card *ngFor="let paragraph of section.sectionItems; let ind = index" formArrayName="sectionItems">
+                <div [formGroupName]="ind">
+                    <mat-icon class="remove-icon" matTooltip="remove paragraph" matTooltipPosition="below" (click)="removeParagraphFromSection(i, ind)">close</mat-icon>
+                    <mat-form-field class="full-width first">
+                        <textarea autosize matInput formControlName="text" [value]="paragraph.text" rows="1"></textarea>
+                    </mat-form-field>
+                </div>
+            </mat-card>
+        </div>
+    </mat-card>
+</mat-card>

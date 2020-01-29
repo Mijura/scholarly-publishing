@@ -10,7 +10,7 @@
         <mat-card-title [formGroupName]="i">
             <mat-icon class="remove-icon" matTooltip="remove paragraph" matTooltipPosition="below" (click)="removeParagraphFromAbstract(i)">close</mat-icon>
             <mat-form-field class="full-width first">
-                <textarea autosize matInput formControlName="text">{{paragraph.text}}</textarea>
+                <textarea autosize matInput formControlName="text" rows="1">{{paragraph.text}}</textarea>
             </mat-form-field>
         </mat-card-title>
     </mat-card>

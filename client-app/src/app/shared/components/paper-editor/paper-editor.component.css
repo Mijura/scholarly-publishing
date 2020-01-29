@@ -57,4 +57,5 @@ mat-card-title{
 
 .content-card{
     height: 72.1vh;
+    overflow: scroll;
 }
