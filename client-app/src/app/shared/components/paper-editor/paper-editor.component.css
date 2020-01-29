@@ -54,8 +54,3 @@ mat-card-title{
     padding-right: 1vw;
     padding-left: 1vw;
 }
-
-.content-card{
-    height: 72.1vh;
-    overflow: scroll;
-}
