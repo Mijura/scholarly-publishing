@@ -10,7 +10,8 @@ export class AddPaperViewModel{
             authors: this.formBuilder.array([]),
             abstract: this.formBuilder.array([]),
             keywords: this.formBuilder.array([]),
-            content: this.formBuilder.array([])
+            content: this.formBuilder.array([]),
+            references: this.formBuilder.array([])
         })
     }
 }

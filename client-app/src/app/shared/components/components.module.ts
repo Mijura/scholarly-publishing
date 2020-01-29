@@ -10,6 +10,7 @@ import { TitleComponent } from './title/title.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { AbstractComponent } from './abstract/abstract.component';
 import { ContentComponent } from './content/content.component';
+import { ReferencesComponent } from './references/references.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContentComponent } from './content/content.component';
     AuthorsComponent,
     AbstractComponent,
     PaperEditorComponent,
-    ContentComponent
+    ContentComponent,
+    ReferencesComponent
   ],
   exports: [
     PaperEditorComponent

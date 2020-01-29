@@ -10,12 +10,7 @@
             <app-content [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-content>
         </div>
         <div class="column">
-            <mat-card>
-                <mat-card-title class="card-title">References</mat-card-title>
-                <mat-form-field class="full-width">
-                    <input matInput formControlName="title">
-                </mat-form-field>
-            </mat-card>
+            <app-references [editPaperForm]="editPaperForm" [formBuilder]="formBuilder"></app-references>
         </div>
     </div>
 </form>

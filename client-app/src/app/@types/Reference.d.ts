@@ -1,0 +1,3 @@
+interface Reference{
+    text: string;
+}

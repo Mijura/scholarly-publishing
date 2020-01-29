@@ -1,0 +1,17 @@
+<mat-card [formGroup]="editPaperForm">
+    <mat-card-title class="card-title">
+        References
+        <span class="span-button">
+            <button (click)="addReference()" mat-stroked-button class="add-button" matTooltip="Add reference"
+                matTooltipPosition="below">reference</button>
+        </span>
+    </mat-card-title>
+    <div *ngFor="let reference of references; let i = index" formArrayName="references">
+        <div [formGroupName]="i">
+            <mat-icon class="remove-icon" matTooltip="remove reference" matTooltipPosition="below" (click)="removeReference(i)">close</mat-icon>
+            <mat-form-field class="full-width">
+                <input matInput formControlName="text">
+            </mat-form-field>
+        </div>
+    </div>
+</mat-card>
