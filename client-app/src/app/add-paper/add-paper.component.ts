@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AddPaperViewModel } from './add-paper.viewmodel';
 import { FormBuilder } from '@angular/forms';
+import { AddPaperService } from './add-paper.service';
 
 @Component({
   selector: 'app-add-paper',
@@ -11,7 +12,7 @@ export class AddPaperComponent {
   
   public vm: AddPaperViewModel;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private addPaperService: AddPaperService) { 
     this.vm = new AddPaperViewModel(this.formBuilder);
   }
 
@@ -20,7 +21,7 @@ export class AddPaperComponent {
   }
 
   addPaper() {
-    alert(JSON.stringify(this.vm.editPaperForm.value))
+    this.addPaperService.addPaper(this.vm.editPaperForm.value).subscribe();
   }
 
 }
