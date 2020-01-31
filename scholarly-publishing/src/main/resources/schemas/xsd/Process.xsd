@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ns1="www.assembly.gov.rs/pubs/">
+    <xs:import namespace="www.assembly.gov.rs/pubs/" schemaLocation="Publication.xsd"/>
+    <xs:element name="Submission">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="State" type="xs:string"/>
+                <xs:element name="Editor" type="xs:string"/>
+                <xs:element name="Reviewers">
+                    <xs:complexType>
+                        <xs:sequence/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element ref="ns1:Publication"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Reviewer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Declined" type="xs:boolean"/>
+                <xs:element name="Mark" type="xs:short"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

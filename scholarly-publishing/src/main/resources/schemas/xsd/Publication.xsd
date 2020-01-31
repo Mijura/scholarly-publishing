@@ -55,7 +55,6 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="Ref" type="xs:string"/>
-                                        <xs:element name="Url" type="xs:string" minOccurs="0"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID"/>
                                 </xs:complexType>
@@ -65,29 +64,12 @@
                 </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:ID"/>
-            <xs:attribute name="category" type="xs:string"/>
-            <xs:attribute name="status">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="RECIVED"/>
-                        <xs:enumeration value="PENDING"/>
-                        <xs:enumeration value="ACCEPTED"/>
-                        <xs:enumeration value="REJECTED"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="version">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:pattern value="\d+((\.\d+){1,2})?"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="issue_id" type="xs:string"/>
-            <xs:attribute name="edition" type="xs:string"/>
-            <xs:attribute name="received" type="xs:date"/>
-            <xs:attribute name="reviewed" type="xs:date"/>
-            <xs:attribute name="accepted" type="xs:date"/>
+            <xs:attribute name="category" type="xs:string" use="required"/>
+            <xs:attribute name="state" use="optional" type="xs:string"> </xs:attribute>
+            <xs:attribute name="received" type="xs:date" use="optional"/>
+            <xs:attribute name="accepted" type="xs:date" use="optional"/>
+            <xs:attribute name="version" type="xs:short" use="required"/>
+            <xs:attribute name="author" type="xs:string"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="Author">
@@ -111,33 +93,9 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="pub:Paragraph" maxOccurs="unbounded" minOccurs="1"/>
-                <xs:element ref="pub:List" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element name="Image" maxOccurs="unbounded" minOccurs="0">
-                    <xs:complexType>
-                        <xs:complexContent>
-                            <xs:extension base="pub:image"> </xs:extension>
-                        </xs:complexContent>
-                    </xs:complexType>
-                </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:ID"/>
             <xs:attribute name="title" type="xs:string"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="List">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="2" name="Statement" type="xs:string"/>
-            </xs:sequence>
-            <xs:attribute name="id" type="xs:ID"/>
-            <xs:attribute name="type">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="ordered"/>
-                        <xs:enumeration value="unordered"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
         </xs:complexType>
     </xs:element>
     <xs:element name="Paragraph">
@@ -145,16 +103,8 @@
             <xs:simpleContent>
                 <xs:extension base="xs:string">
                     <xs:attribute name="id" type="xs:ID"/>
-                    <xs:attribute name="title" type="xs:string"/>
                 </xs:extension>
             </xs:simpleContent>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="image">
-        <xs:sequence>
-            <xs:element name="url" type="xs:string"> </xs:element>
-            <xs:element name="title" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID"/>
-    </xs:complexType>
 </xs:schema>
