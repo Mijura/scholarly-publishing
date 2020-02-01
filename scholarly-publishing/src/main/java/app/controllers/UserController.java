@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import app.dtos.UserDTO;
 import app.mappers.UserMapper;
 import app.model.Author;
+import app.model.User;
+import app.services.UserService;
 
 @RestController
 @RequestMapping(value = "/api/user")
@@ -21,15 +23,17 @@ public class UserController {
 	@Autowired
     private UserMapper userMapper;
 	
+	@Autowired
+	private UserService userService;
+	
 	@PostMapping("/register")
 	public ResponseEntity<?> register(@RequestBody UserDTO userDTO) {
+		User user = userService.findByUsername(userDTO.getUsername());
+		if(user != null) {
+			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
+		}
 		Author author = userMapper.toAuthor(userDTO);
-		System.out.println(author instanceof Author);
-		System.out.println(author.getFirstName());
-		System.out.println(author.getLastName());
-		System.out.println(author.getEmail());
-		System.out.println(author.getPassword());
-		System.out.println(author.getUsername());
-		return new ResponseEntity<String>("ok", HttpStatus.OK);
+		userService.save(author);
+		return new ResponseEntity<Boolean>(true , HttpStatus.OK);
 	}
 }

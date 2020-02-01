@@ -1,5 +1,10 @@
 package app.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "Reviewer")
 public class Reviewer extends User {
 
 	public Reviewer() {
