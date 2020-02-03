@@ -17,6 +17,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 @DiscriminatorColumn(name = "user_type")
 public class User implements UserDetails {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue
 	Long id;

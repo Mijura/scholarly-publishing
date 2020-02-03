@@ -63,7 +63,7 @@ public class UserController {
 		}
 		
 		final UserDetails userDetails = userService.loadUserByUsername(userDTO.getUsername());
-		
+		System.out.println(userDetails.getAuthorities().toString());
 		final String jwt = jwtTokenUtil.generateToken(userDetails);
 		
 		return ResponseEntity.ok(new AuthenticationResponseDTO(jwt));
