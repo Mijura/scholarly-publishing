@@ -31,3 +31,5 @@ hs_err_pid*
 .factorypath
 .apt_generated_tests
 .apt_generated
+
+.attach_pid*
