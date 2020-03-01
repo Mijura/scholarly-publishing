@@ -21,6 +21,7 @@ export class AddPaperComponent {
   }
 
   addPaper() {
+    alert(JSON.stringify(this.vm.editPaperForm.value));
     this.addPaperService.addPaper(this.vm.editPaperForm.value).subscribe();
   }
 

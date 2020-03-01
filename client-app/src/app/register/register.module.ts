@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseService } from './base.service';
 
 
 
@@ -8,9 +7,6 @@ import { BaseService } from './base.service';
   declarations: [],
   imports: [
     CommonModule
-  ],
-  providers: [
-    BaseService
   ]
 })
-export class ServicesModule { }
+export class RegisterModule { }

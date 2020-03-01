@@ -6,6 +6,8 @@ import { RoutingModule } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AddPaperModule } from './add-paper/add-paper.module';
+import { LoginModule } from './login/login.module';
+import { BaseService } from './shared/services/base.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { AddPaperModule } from './add-paper/add-paper.module';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    LoginModule,
     AddPaperModule
   ],
   providers: [],

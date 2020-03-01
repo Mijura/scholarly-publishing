@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +41,7 @@ public class JwtUtil {
 	
 	public String generateToken(UserDetails userDetails) {
 		Map<String, Object> claims = new HashMap<>();
+		claims.put("role", ((GrantedAuthority) userDetails.getAuthorities().toArray()[0]).getAuthority());
 		return createToken(claims, userDetails.getUsername());
 	}
 
