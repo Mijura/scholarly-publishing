@@ -8,11 +8,11 @@
 		<version>2.2.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.scholarly.publishing.service.discovery</groupId>
-	<artifactId>scholarly-publishing-service-discovery</artifactId>
+	<groupId>org.scholarly.publishing.config</groupId>
+	<artifactId>scholarly-publishing-config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>scholarly-publishing-service-discovery</name>
-	<description>Service Discovery</description>
+	<name>scholarly-publishing-config</name>
+	<description>This project contains configuration files for all microservices</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,19 +21,11 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -45,7 +37,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	
 	<build>
 		<plugins>
 			<plugin>
