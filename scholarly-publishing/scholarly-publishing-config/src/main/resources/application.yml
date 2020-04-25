@@ -9,3 +9,4 @@ spring:
       server:
         git:
           uri: https://github.com/Mijura/scholarly-publishing-config
+          cloneOnStart: true
