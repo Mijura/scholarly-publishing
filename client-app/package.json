@@ -24,7 +24,7 @@
     "core-js": "^2.5.4",
     "ngx-autosize": "^1.7.5",
     "rxjs": "^6.5.4",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "tslib": "^1.11.1",
     "zone.js": "~0.9.1"
   },
